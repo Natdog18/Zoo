@@ -70,8 +70,8 @@
 				D70CAA4A1DADBAB200E9B54F /* main.swift */,
 				D70CAA511DADBBF500E9B54F /* io.swift */,
 				D70CAA531DADBC1200E9B54F /* interactive.swift */,
-				D70CAA551DADC28100E9B54F /* person.swift */,
 				D70CAA571DADC29400E9B54F /* animal.swift */,
+				D70CAA551DADC28100E9B54F /* person.swift */,
 				D70CAA591DADC2AE00E9B54F /* zoo.swift */,
 			);
 			path = zoo;
@@ -270,6 +270,7 @@
 				D70CAA501DADBAB200E9B54F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

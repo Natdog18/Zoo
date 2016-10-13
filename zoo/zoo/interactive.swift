@@ -13,46 +13,80 @@ class Interactive{
     private var currentInPut: String = "q"
     private var io = Io()
     private var zoo = Zoo()
-    
+    private var name: String
+    private var animal = String
+    private var People = String
     
     func go(){
         
-        while !done {
+        io.writeMessage("\nInput?")
+        currentInPut = io.getInput()
+        let selection = currentInPut
+        switch selection{
             
-            //Ask the user for input right here.
-            io.writeMessage("\nInput?")
-            currentInPut = io.getInput()
+        case "Help":
+            print("\nFor help and other information here is a list of available actions for the Zoo: \n\nList: There is a lists the animals currently existing in the library. \nListavaible:")
             
-            if currentInPut == "q" {
-                done = true
-            } else if currentInPut == "add-animal" {
-                // Add an animal
-                // addAnimal
-                // .... what type of animal
-                // .... what is the id of the animal
-                // ....
-                addAnimal()
-                
-            } else {
-                print("The input is: \(currentInPut)")
-            }
+        case "q":
+            done = true
+            
+        case "co":
+            startCheckOut()
+            
+        case "ci":
+            startCheckIn()
+            
+        case "ab":
+            askQuestionsTheZoo()
+            
+        default:
+            print("Inter a valid choice")
         }
-        print ("Exiting....")
-        return
+    }
+    print ("Exiting....")
+    
+    return
+    }
+
+    func startCheckIn() {
+       
+        print("Enter your name: ")
+        if let idToCheckIn = Int(io.getInput()) {
+            
+           
+            print(AminalcheckIn(id: idToCheckIn))
+            
+        } else {
+            print("Invalid input")
+        }
     }
     
-    func addAnimal() {
-        // ask questions about animal
+    func startCheckOut() {
+     
+        print("Come again")
+        if let idToCheckOut = Int(io.getInput()){
+            
+            print(Aminal.checkOut(id: idToCheckOut))
+            
+        }else{
+            print("Invalid input")
+        }
         
-        // add the animal via zoo class
-        
-        // done
     }
     
-}
-//Display a main menu
-//func displayMainMenu() {
-    //* Menu option to check information about an animal
-    //* Menu option to check information about a person
-    //* Menu option to show all animals the zoo
-    //* Menu option to show all people in the zoo
+    func askQuestionsTheZoo() {
+        print("What would you like to know?")
+        currentInPut = io.getInput()
+        let id: Int = Int(currentInPut) ?? 0
+        
+        print("Here is your info.")
+        let title = io.getInput()
+        
+        Aminal.addBook(id: id, title: title)
+        
+    }
+
+
+
+
+

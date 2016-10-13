@@ -8,22 +8,30 @@
 
 import Foundation
 
-class Zoo {
+    class Zoo {
+
+    func addName(id: Int, title: String) {
+        let name = Name(id: id, FB: FB, checkedIn: true)
+        peopleInfo[id] = name
     
-    var animalDict: [Int:Animal] = [:]
-    
-    
-    //func add animal
-    
-    
-    //func remove animal
-    func displayAllAnimals() {
-        
+    }
+
+    func addAnimal(id: Int, title: String) {
+        let name = Name(id: id, kind: kind, checkedIn: true)
+        namesOfAnimals[id] = name
+   
+    }
+
+    func addName(id: Int, title: String) {
+        let name = Name(id: id, FB: FB, checkedIn: true)
+        peopleInfo[id] = name
+
     }
     
-    func displayAllPeople() {
-        //A function to display all people in the zoo
+    func addAnimal(id: Int, title: String) {
+        let name = Name(id: id, FB: FB, checkedIn: true)
+        namesOfAnimals[id] = name
+   
     }
-}
 
-
+print(zoo)

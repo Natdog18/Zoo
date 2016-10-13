@@ -26,13 +26,3 @@ class Io {
         print("\(message)\n")
     }
 }
-//Do basic input and output here
-//Get Input
-func getInput() {
-    //Get user input here
-}
-
-//Display Output
-func displayOutput() {
-    //Display output here
-}
