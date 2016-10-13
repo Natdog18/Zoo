@@ -17,27 +17,27 @@ class Zoo{
     
     func getTitleById(id: Int) -> String {
         
-        let name: Animal? = namesOfAnimals[id]
+        let animal: Animal? = namesOfAnimals[id]
         
-        return Animal?.kind ?? "Not Found"
+        return animal?.kind ?? "Not Found"
     }
     
     func populateAnimals() {
-        var animal: String
+        var animal: Animal
         
-        animal = Animal(id: 1, kind: "Snakes", checkedIn: true)
+        animal = Animal(id: 1, kind: "Snakes", checkedIn: true, attraction: "Cage")
         namesOfAnimals[1] = animal
         
-        animal = Animal(id: 2, kind: "Birds", checkedIn: true)
+        animal = Animal(id: 2, kind: "Birds", checkedIn: true, attraction: "Cage")
         namesOfAnimals[2] = animal
         
-        animal = Animal(id: 3, kind: "Spiders", checkedIn: true)
+        animal = Animal(id: 3, kind: "Spiders", checkedIn: true, attraction: "Cage")
         namesOfAnimals[3] = animal
         
-        animal = Animal(id: 4, kind: "Tigers", checkedIn: true)
+        animal = Animal(id: 4, kind: "Tigers", checkedIn: true, attraction: "Cage")
         namesOfAnimals[4] = animal
         
-        animal = Animal(id: 5, kind: "Monkey", checkedIn: true)
+        animal = Animal(id: 5, kind: "Monkey", checkedIn: true, attraction: "Cage")
         namesOfAnimals[5] = animal
         
         
@@ -61,13 +61,35 @@ class Zoo{
             name.checkedIn = false
             return "Checked out successfully"
         } else {
-            return "I was not able to find book id: \(id)"
+            return "List of all animals: \(id)"
         }
     }
     
-    func addName(id: Int, title: String) {
-        let animal = Animal(id: id, kind: kind, checkedIn: true)
+    func addName(id: Int, kind: String) {
+        let animal = Animal(id: id, kind: kind, checkedIn: false, attraction: "Cage")
         namesOfAnimals[id] = animal
     }
+    
+    //links to the interactive
+    //zoo.startCheckIn() //this function should go in the zoo file
+    func checkIn(id:Int, kind: String, checkedIn: Bool, attraction: String) -> String {
+        if let name = namesOfAnimals[id] {
+            name.checkedIn = true
+            return "Success"
+        } else {
+            return "Failure"
+        }
+    }
+    //zoo.askQuestionsTheZoo() //this function should go in the zoo file
+    //links to the interactive
+    func askQuestionsTheZoo(id:Int) -> String {
+        if let name = namesOfAnimals[id] {
+            name.checkedIn = true
+            return "Success"
+        } else {
+            return "Failure"
+        }
+    }
 }
+
 
