@@ -7,15 +7,15 @@
 //
 
 import Foundation
-import Foundation
 class Interactive{
+    
     private var done: Bool = false
     private var currentInPut: String = "q"
     private var io = Io()
     private var zoo = Zoo()
-    private var name: String
-    private var animal = String
-    private var People = String
+    private var name = ""
+    private var namesOfAnimals = ""
+   
     
     func go(){
         
@@ -31,62 +31,22 @@ class Interactive{
             done = true
             
         case "co":
-            startCheckOut()
+            zoo.startCheckOut()
             
         case "ci":
-            startCheckIn()
+            //zoo.startCheckIn() //this function should go in the zoo file
+            print("something")
             
         case "ab":
-            askQuestionsTheZoo()
+            //zoo.askQuestionsTheZoo() //this function should go in the zoo file
+            print("something")
             
         default:
             print("Inter a valid choice")
         }
-    }
-    print ("Exiting....")
+    
+     print("Exiting....")
     
     return
     }
-
-    func startCheckIn() {
-       
-        print("Enter your name: ")
-        if let idToCheckIn = Int(io.getInput()) {
-            
-           
-            print(AminalcheckIn(id: idToCheckIn))
-            
-        } else {
-            print("Invalid input")
-        }
-    }
-    
-    func startCheckOut() {
-     
-        print("Come again")
-        if let idToCheckOut = Int(io.getInput()){
-            
-            print(Aminal.checkOut(id: idToCheckOut))
-            
-        }else{
-            print("Invalid input")
-        }
-        
-    }
-    
-    func askQuestionsTheZoo() {
-        print("What would you like to know?")
-        currentInPut = io.getInput()
-        let id: Int = Int(currentInPut) ?? 0
-        
-        print("Here is your info.")
-        let title = io.getInput()
-        
-        Aminal.addBook(id: id, title: title)
-        
-    }
-
-
-
-
-
+}
